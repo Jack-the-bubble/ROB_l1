@@ -8,6 +8,18 @@ for i = 1: rows(clsres)
 	pom = [ts(1:i-1, :);ts(i+1:end, :)];
 	[~, a]=min(sumsq(pom(:, 2:end)-repmat(x, rows(pom), 1), 2));
 	clsres(i)=pom(a);
+
+%%drugie roz
+%	tscpy = [ts(ts(1:i-1, :) ts(i+1:end, :)];
+%	clsres(i) = cls1nn(tscpy, ts(i, 2:end));
+%%ver 3
+%	tscpy =ts([1:i-1 i+1:end], :);
+%	clsres(i) = cls1nn(tscpy, ts(i, 2:end));
+
+%%ver 4
+%	tscpy = ts(1:end ~= i, :);
+%	clsres(i) = cls1nn(tscpy, ts(i, 2:end));
+
 end
 
 
